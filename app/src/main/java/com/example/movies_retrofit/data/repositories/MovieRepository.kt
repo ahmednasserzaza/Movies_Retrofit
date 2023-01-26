@@ -1,19 +1,18 @@
-package com.example.movies_retrofit.data
+package com.example.movies_retrofit.data.repositories
 
 import android.util.Log
-import com.example.movies_retrofit.data.model.State
+import com.example.movies_retrofit.utils.State
 import com.example.movies_retrofit.networking.API
+import com.example.movies_retrofit.utils.Constants
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 
 class MovieRepository {
 
-    fun getMovieConfig() = wrapWithFlow { API.apiService.getMovieConfiguration(Constants.API_KEY) }
     fun getPopularMovies() = wrapWithFlow { API.apiService.getPopularMovies(Constants.API_KEY) }
 
-
-    fun <T> wrapWithFlow(function: suspend () -> Response<T>): Flow<State<T?>> {
+    private fun <T> wrapWithFlow(function: suspend () -> Response<T>): Flow<State<T?>> {
         return flow {
             emit(State.Loading)
             try {

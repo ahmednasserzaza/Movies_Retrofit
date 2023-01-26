@@ -2,13 +2,11 @@ package com.example.movies_retrofit.utils
 
 import android.view.View
 import android.widget.ImageView
-import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.movies_retrofit.BaseAdapter
+import com.example.movies_retrofit.ui.base.BaseAdapter
 import com.example.movies_retrofit.R
-import com.example.movies_retrofit.data.model.State
 
 @BindingAdapter(value = ["app:showWhenLoading"])
 fun<T> showWhenLoading(view: View, state: State<T>? ){
@@ -42,7 +40,7 @@ fun<T> showWhenError(view: View, state: State<T>? ){
 
 @BindingAdapter(value = ["app:imageUrl"])
 fun setImageFromUrl(view:ImageView , url:String?){
-    Glide.with(view).load(url).error(R.drawable.ic_baseline_error_24).centerCrop().into(view)
+    Glide.with(view).load(Constants.IMAGE_PATH+url).error(R.drawable.ic_baseline_error_24).centerCrop().into(view)
 }
 
 @BindingAdapter(value = ["app:items"])

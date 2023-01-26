@@ -1,4 +1,4 @@
-package com.example.movies_retrofit.data.model
+package com.example.movies_retrofit.utils
 
 sealed class State<out T>{
     data class Success<T>(val data : T) : State<T>()

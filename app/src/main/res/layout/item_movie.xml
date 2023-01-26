@@ -9,7 +9,7 @@
             type="com.example.movies_retrofit.data.model.Movie" />
         <variable
             name="listener"
-            type="com.example.movies_retrofit.MovieInteractionListener" />
+            type="com.example.movies_retrofit.ui.MovieInteractionListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

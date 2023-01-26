@@ -1,6 +1,6 @@
 package com.example.movies_retrofit.networking
 
-import com.example.movies_retrofit.data.Constants
+import com.example.movies_retrofit.utils.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

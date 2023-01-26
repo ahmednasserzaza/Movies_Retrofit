@@ -1,8 +1,6 @@
 package com.example.movies_retrofit.data.model
 
-
 import com.google.gson.annotations.SerializedName
-
 data class Movie(
     @SerializedName("adult")
     val adult: Boolean? = null,

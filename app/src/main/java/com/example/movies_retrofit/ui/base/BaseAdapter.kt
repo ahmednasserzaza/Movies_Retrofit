@@ -1,10 +1,11 @@
-package com.example.movies_retrofit
+package com.example.movies_retrofit.ui.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movies_retrofit.BR
 
 interface BaseInterActionListener
 
@@ -12,7 +13,6 @@ abstract class BaseAdapter<T>(
     private var items: List<T>,
     private val listener: BaseInterActionListener
 ) : RecyclerView.Adapter<BaseAdapter.BaseViewHolder>() {
-
 
     abstract val layoutId:Int
 
@@ -25,8 +25,8 @@ abstract class BaseAdapter<T>(
         when (holder) {
             is ItemViewHolder -> {
                 holder.binding.apply {
-                    setVariable(BR.item , currentItem)
-                    setVariable(BR.listener , listener)
+                    setVariable(BR.item, currentItem)
+                    setVariable(BR.listener, listener)
                 }
             }
         }
